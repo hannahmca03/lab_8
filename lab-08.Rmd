@@ -1,6 +1,6 @@
 ---
 title: "Lab 08 - Predicting rain"
-author: "INSERT NAME HERE"
+author: "hannahmca03"
 date: "`r Sys.Date()`"
 output: html_document
 ---
@@ -195,15 +195,7 @@ weather_pred2 %>%
 
 4. Now focus on the second model. Consider several thresholds for predicting `RainTomorrow` and look at the number of false positives and false negatives. For example:
 
-```{r}
-cutoff_prob <- 0.5
-weather_pred2 %>%
-  mutate(
-    RainTomorrow      = if_else(RainTomorrow == "Yes", "It rains", "It does not rain"),
-    RainTomorrow_pred = if_else(.pred_Yes > cutoff_prob, "Predicted rain", "Predicted no rain")
-    ) %>%
-  na.omit() %>%
-  count(RainTomorrow_pred, RainTomorrow)
+
 ```
 
 - What is the the false positive rate with `cutoff_prob = 0.3`? 
